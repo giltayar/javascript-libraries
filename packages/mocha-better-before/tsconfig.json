@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "lib": ["es2020"],
+    "target": "ES2020",
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "strict": true,
+    "declaration": true,
+    "sourceMap": false,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "allowJs": true,
+    "checkJs": true,
+    "emitDeclarationOnly": true,
+    "declarationDir": "types",
+    "maxNodeModuleJsDepth": 0,
+    "declarationMap": true
+  },
+  "include": ["src/**/*.js", "test/**/*.js"],
+  "exclude": ["node_modules"],
+  "typeAcquisition": {"enable": true}
+}

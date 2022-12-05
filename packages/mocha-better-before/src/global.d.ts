@@ -1,0 +1,1 @@
+// Insert here all `declare module 'some-module'` for modules with types.

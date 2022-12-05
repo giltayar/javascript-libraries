@@ -1,0 +1,58 @@
+{
+  "name": "@giltayar/mocha-better-before",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "exports": "./src/mocha-better-before.js",
+  "main": "./src/mocha-better-before.js",
+  "types": "./types/src/mocha-better-before.d.ts",
+  "engines": {
+    "node": ">=15.0.0"
+  },
+  "files": [
+    "src",
+    "types"
+  ],
+  "scripts": {
+    "build": "concurrently -r 'npm:build:*'",
+    "build:typescript": "rm -rf types && tsc && cp src/*.d.ts types/src",
+    "test": "concurrently -r 'npm:test:*'",
+    "test:mocha": "npm run mocha",
+    "mocha": "mocha --no-timeouts --exit 'test/unit/*.test.js' 'test/integ/*.test.js'",
+    "test:eslint": "eslint --max-warnings=0 '**/*.js'",
+    "test:typescript": "tsc --noEmit --emitDeclarationOnly false"
+  },
+  "keywords": [
+    "javascript",
+    "nodejs"
+  ],
+  "author": "Gil Tayar <giltayar@giltayar.com>",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/giltayar/javascript-libraries",
+    "directory": "packages/mocha-better-before",
+    "type": "git"
+  },
+  "dependencies": {
+    "eslint-plugin-n": "^15.6.0"
+  },
+  "peerDependencies": {
+    "mocha": "*"
+  },
+  "devDependencies": {
+    "@reggev/eslint-plugin-it-should-be-skipped": "^1.0.1",
+    "@types/chai": "^4.3.4",
+    "@types/chai-subset": "^1.3.3",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.11.11",
+    "chai": "^4.3.7",
+    "chai-subset": "^1.6.0",
+    "concurrently": "^7.6.0",
+    "eslint": "^8.29.0",
+    "eslint-plugin-mocha-no-only": "^1.1.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "mocha": "^10.1.0",
+    "prettier": "^2.8.0",
+    "typescript": "^4.9.3"
+  }
+}
