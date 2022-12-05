@@ -1,0 +1,71 @@
+{
+  "env": {
+    "commonjs": true,
+    "es6": true,
+    "node": true,
+    "browser": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module"
+  },
+  "extends": [
+    "plugin:n/recommended"
+  ],
+  "plugins": [
+    "@reggev/eslint-plugin-it-should-be-skipped",
+    "prettier",
+    "mocha-no-only",
+    "n"
+  ],
+  "rules": {
+    "prettier/prettier": [
+      "warn"
+    ],
+    "no-warning-comments": [
+      "warn",
+      {
+        "terms": [
+          "fixme",
+          "removeme",
+          "xxx",
+          "@@@"
+        ],
+        "location": "anywhere"
+      }
+    ],
+    "no-process-exit": "off",
+    "no-const-assign": "error",
+    "no-this-before-super": "error",
+    "no-undef": "warn",
+    "no-unreachable": "warn",
+    "no-unused-vars": [
+      "warn",
+      {
+        "varsIgnorePattern": "^_",
+        "args": "all",
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "constructor-super": "warn",
+    "valid-typeof": "warn",
+    "mocha-no-only/mocha-no-only": "warn",
+    "n/no-unsupported-features/es-syntax": [
+      "error",
+      {
+        "ignores": [
+          "dynamicImport",
+          "modules"
+        ]
+      }
+    ],
+    "n/exports-style": [
+      "error",
+      "module.exports"
+    ],
+    "@reggev/it-should-be-skipped/it-should-be-skipped": [
+      "warn"
+    ],
+    "n/no-process-exit": "off"
+  }
+}

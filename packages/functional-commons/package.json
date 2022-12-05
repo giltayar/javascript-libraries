@@ -1,0 +1,55 @@
+{
+  "name": "@giltayar/functional-commons",
+  "version": "1.0.0",
+  "description": "A library with lots of utility functions. Along with`@giltayar/promise-commons`, they are my 'lodash' replacement and contain things I would have liked to see in a javascript standard library.",
+  "type": "module",
+  "exports": "./src/functional-commons.js",
+  "types": "./types/src/functional-commons.d.ts",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "src",
+    "types"
+  ],
+  "scripts": {
+    "build": "concurrently -r 'npm:build:*'",
+    "build:typescript": "rm -rf types && tsc && cp src/*.d.ts types/src",
+    "test": "concurrently -r 'npm:test:*'",
+    "mocha": "mocha --no-timeouts --exit 'test/**/*.test.js'",
+    "test:eslint": "eslint --max-warnings=0 '**/*.js'",
+    "test:typescript": "tsc --noEmit --emitDeclarationOnly false",
+    "test:mocha": "npm run mocha"
+  },
+  "keywords": [
+    "nodejs",
+    "javascript",
+    "utilities"
+  ],
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/giltayar/javascript-libraries",
+    "directory": "packages/functional-commons",
+    "type": "git"
+  },
+  "dependencies": {
+    "type-fest": "3.3.0"
+  },
+  "devDependencies": {
+    "@reggev/eslint-plugin-it-should-be-skipped": "^1.0.1",
+    "@types/chai": "^4.3.4",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.11.10",
+    "chai": "^4.3.7",
+    "concurrently": "^7.6.0",
+    "eslint": "^8.29.0",
+    "eslint-plugin-es": "^4.1.0",
+    "eslint-plugin-mocha-no-only": "^1.1.1",
+    "eslint-plugin-n": "^15.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "mocha": "^10.1.0",
+    "prettier": "^2.8.0",
+    "prettier-plugin-jsdoc": "^0.4.2",
+    "typescript": "^4.9.3"
+  }
+}
