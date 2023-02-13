@@ -1,0 +1,18 @@
+version: '3'
+services:
+  nginx:
+    image: nginx:${NGINX_VERSION}
+    ports:
+        - 80
+  nginx2:
+    image: nginx:${NGINX_VERSION}
+    volumes:
+      - '${CONTENT_FOLDER}:/usr/share/nginx/html:ro'
+    ports:
+        - 80
+  postgres:
+    image: postgres:9.6.20
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - 5432

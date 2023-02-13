@@ -1,0 +1,7 @@
+version: '3'
+services:
+  ping:
+    image: busybox:1.33.0
+    command: "ping host.docker.internal"
+    extra_hosts:
+    - ${HOST_DOCKER_INTERNAL}

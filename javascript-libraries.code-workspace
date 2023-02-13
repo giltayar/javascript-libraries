@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "packages/functional-commons"
+		},
+		{
+			"path": "packages/promise-commons"
+		},
+		{
+			"path": "packages/docker-compose-testkit"
+		},
+		{
+			"path": "packages/mocha-better-before"
+		}
+	],
+	"settings": {}
+}

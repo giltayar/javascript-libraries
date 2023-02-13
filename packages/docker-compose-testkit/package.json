@@ -1,0 +1,57 @@
+{
+  "name": "@giltayar/docker-compose-testkit",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "exports": "./src/docker-compose-testkit.js",
+  "main": "./src/docker-compose-testkit.js",
+  "types": "./types/src/docker-compose-testkit.d.ts",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "src",
+    "types"
+  ],
+  "scripts": {
+    "build": "concurrently -r 'npm:build:*'",
+    "build:typescript": "rm -rf types && tsc && cp src/*.d.ts types/src",
+    "test": "concurrently -r 'npm:test:*'",
+    "test:mocha-parallel": "npm run mocha -- --parallel",
+    "mocha": "mocha --no-timeouts --exit 'test/integ/*.test.js'",
+    "test:eslint": "eslint '**/*.js'",
+    "test:typescript": "tsc --noEmit --emitDeclarationOnly false"
+  },
+  "keywords": [
+    "javascript",
+    "nodejs"
+  ],
+  "author": "Gil Tayar <gil@tayar.org>",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/giltayar/javascript-libraries",
+    "directory": "packages/docker-compose-testkit",
+    "type": "git"
+  },
+  "dependencies": {
+    "execa": "^6.1.0",
+    "p-retry": "^5.1.2"
+  },
+  "devDependencies": {
+    "@giltayar/promise-commons": "^1.0.0",
+    "@types/chai": "^4.3.4",
+    "@types/chai-subset": "^1.3.3",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.11.15",
+    "chai": "^4.3.7",
+    "chai-subset": "^1.6.0",
+    "concurrently": "^7.6.0",
+    "eslint": "^8.29.0",
+    "eslint-plugin-mocha-no-only": "^1.1.1",
+    "eslint-plugin-n": "^15.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "mocha": "^10.2.0",
+    "prettier": "^2.8.1",
+    "typescript": "^4.9.4"
+  }
+}
